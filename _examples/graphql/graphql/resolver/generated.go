@@ -3,8 +3,6 @@
 package resolver
 
 import (
-	"_examples/graphql/ent"
-	"_examples/graphql/ent/schema/uuidgql"
 	"bytes"
 	"context"
 	"errors"
@@ -14,6 +12,9 @@ import (
 	"sync/atomic"
 	"time"
 
+	"_examples/graphql/ent"
+	"_examples/graphql/ent/schema/uuidgql"
+
 	"entgo.io/contrib/entgql"
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
@@ -21,7 +22,7 @@ import (
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // region    ************************** generated!.gotpl **************************
@@ -47,8 +48,7 @@ type ResolverRoot interface {
 	Query() QueryResolver
 }
 
-type DirectiveRoot struct {
-}
+type DirectiveRoot struct{}
 
 type ComplexityRoot struct {
 	PageInfo struct {
@@ -767,7 +767,7 @@ type TodoHistoryEdge {
 """
 TodoHistoryOpType is enum for the field operation
 """
-enum TodoHistoryOpType @goModel(model: "github.com/flume/enthistory.OpType") {
+enum TodoHistoryOpType @goModel(model: "github.com/BartBucknill/enthistory.OpType") {
   INSERT
   UPDATE
   DELETE
@@ -6872,7 +6872,7 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 }
 
 func (ec *executionContext) unmarshalNTestExcludeOrderField2ᚖ_examplesᚋgraphqlᚋentᚐTestExcludeOrderField(ctx context.Context, v any) (*ent.TestExcludeOrderField, error) {
-	var res = new(ent.TestExcludeOrderField)
+	res := new(ent.TestExcludeOrderField)
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -6947,7 +6947,7 @@ func (ec *executionContext) marshalNTodoHistoryOpType2githubᚗcomᚋflumeᚋent
 }
 
 func (ec *executionContext) unmarshalNTodoHistoryOrderField2ᚖ_examplesᚋgraphqlᚋentᚐTodoHistoryOrderField(ctx context.Context, v any) (*ent.TodoHistoryOrderField, error) {
-	var res = new(ent.TodoHistoryOrderField)
+	res := new(ent.TodoHistoryOrderField)
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -6968,7 +6968,7 @@ func (ec *executionContext) unmarshalNTodoHistoryWhereInput2ᚖ_examplesᚋgraph
 }
 
 func (ec *executionContext) unmarshalNTodoOrderField2ᚖ_examplesᚋgraphqlᚋentᚐTodoOrderField(ctx context.Context, v any) (*ent.TodoOrderField, error) {
-	var res = new(ent.TodoOrderField)
+	res := new(ent.TodoOrderField)
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -7275,7 +7275,7 @@ func (ec *executionContext) unmarshalOCursor2ᚖentgoᚗioᚋcontribᚋentgqlᚐ
 	if v == nil {
 		return nil, nil
 	}
-	var res = new(entgql.Cursor[uuid.UUID])
+	res := new(entgql.Cursor[uuid.UUID])
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -7691,7 +7691,7 @@ func (ec *executionContext) unmarshalOTodoHistoryOpType2ᚖgithubᚗcomᚋflume�
 	if v == nil {
 		return nil, nil
 	}
-	var res = new(enthistory.OpType)
+	res := new(enthistory.OpType)
 	err := res.UnmarshalGQL(v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }

@@ -11,7 +11,7 @@ import (
 
 	"entgo.io/ent/entc/gen"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 
 	"entgo.io/ent/entc"
 )

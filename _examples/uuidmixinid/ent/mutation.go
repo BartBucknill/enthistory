@@ -3,20 +3,21 @@
 package ent
 
 import (
-	"_examples/uuidmixinid/ent/menuitem"
-	"_examples/uuidmixinid/ent/menuitemhistory"
-	"_examples/uuidmixinid/ent/predicate"
 	"context"
 	"errors"
 	"fmt"
 	"sync"
 	"time"
 
+	"_examples/uuidmixinid/ent/menuitem"
+	"_examples/uuidmixinid/ent/menuitemhistory"
+	"_examples/uuidmixinid/ent/predicate"
+
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

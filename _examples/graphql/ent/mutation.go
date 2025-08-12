@@ -3,23 +3,24 @@
 package ent
 
 import (
-	"_examples/graphql/ent/predicate"
-	"_examples/graphql/ent/testexclude"
-	"_examples/graphql/ent/testskip"
-	"_examples/graphql/ent/testskiphistory"
-	"_examples/graphql/ent/todo"
-	"_examples/graphql/ent/todohistory"
 	"context"
 	"errors"
 	"fmt"
 	"sync"
 	"time"
 
+	"_examples/graphql/ent/predicate"
+	"_examples/graphql/ent/testexclude"
+	"_examples/graphql/ent/testskip"
+	"_examples/graphql/ent/testskiphistory"
+	"_examples/graphql/ent/todo"
+	"_examples/graphql/ent/todohistory"
+
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

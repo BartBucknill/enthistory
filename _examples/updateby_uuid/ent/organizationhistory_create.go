@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/updateby_uuid/ent/organizationhistory"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/updateby_uuid/ent/organizationhistory"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // OrganizationHistoryCreate is the builder for creating a OrganizationHistory entity.

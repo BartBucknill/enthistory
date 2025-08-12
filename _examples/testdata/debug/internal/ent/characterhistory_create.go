@@ -3,18 +3,19 @@
 package ent
 
 import (
-	"_examples/testdata/debug/internal/ent/characterhistory"
-	"_examples/testdata/debug/models"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/testdata/debug/internal/ent/characterhistory"
+	"_examples/testdata/debug/models"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // CharacterHistoryCreate is the builder for creating a CharacterHistory entity.

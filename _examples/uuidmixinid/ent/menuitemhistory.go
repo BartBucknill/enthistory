@@ -3,16 +3,17 @@
 package ent
 
 import (
-	"_examples/uuidmixinid/ent/menuitemhistory"
 	"fmt"
 	"strings"
 	"time"
+
+	"_examples/uuidmixinid/ent/menuitemhistory"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // MenuItemHistory is the model entity for the MenuItemHistory schema.

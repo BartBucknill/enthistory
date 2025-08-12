@@ -3,13 +3,14 @@
 package todohistory
 
 import (
-	"_examples/graphql/ent/predicate"
 	"time"
+
+	"_examples/graphql/ent/predicate"
 
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // ID filters vertices based on their ID field.

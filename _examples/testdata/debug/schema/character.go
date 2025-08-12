@@ -4,7 +4,7 @@ import (
 	"_examples/testdata/debug/models"
 	"_examples/testdata/debug/schema/mixins"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 
 	"entgo.io/contrib/entgql"
 

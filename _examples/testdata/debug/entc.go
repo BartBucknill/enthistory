@@ -1,16 +1,17 @@
 package main
 
 import (
-	"_examples/testdata/debug/schema"
 	"fmt"
 	"log"
+
+	"_examples/testdata/debug/schema"
 
 	"entgo.io/ent/entc"
 	"entgo.io/ent/entc/gen"
 
 	"entgo.io/ent"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

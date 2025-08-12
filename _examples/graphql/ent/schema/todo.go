@@ -10,7 +10,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // Todo holds the schema definition for the Todo entity.

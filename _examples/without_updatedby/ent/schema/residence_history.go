@@ -3,8 +3,9 @@
 package schema
 
 import (
-	"_examples/basic/ent/schema/mixins"
 	"time"
+
+	"_examples/basic/ent/schema/mixins"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/entsql"
@@ -13,7 +14,7 @@ import (
 	"entgo.io/ent/schema/index"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type ResidenceHistory struct {
@@ -34,17 +35,22 @@ func (ResidenceHistory) Fields() []ent.Field {
 			Optional().
 			Immutable(),
 		field.String("name").
-			Immutable()}
+			Immutable(),
+	}
 }
+
 func (ResidenceHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (ResidenceHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entsql.Annotation{Table: "residence_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert, enthistory.OpTypeUpdate, enthistory.OpTypeDelete}}}
 }
+
 func (ResidenceHistory) Mixin() []ent.Mixin {
 	return []ent.Mixin{mixins.TimeMixin{}}
 }
+
 func (ResidenceHistory) Indexes() []ent.Index {
 	return []ent.Index{index.Fields("history_time")}
 }

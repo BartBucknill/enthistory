@@ -11,7 +11,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type CharacterHistory struct {
@@ -32,11 +32,14 @@ func (CharacterHistory) Fields() []ent.Field {
 			Optional().
 			Immutable(),
 		field.Int("age"),
-		field.String("name")}
+		field.String("name"),
+	}
 }
+
 func (CharacterHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (CharacterHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entsql.Annotation{Table: "character_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert, enthistory.OpTypeUpdate, enthistory.OpTypeDelete}}}
 }

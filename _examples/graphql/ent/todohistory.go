@@ -3,16 +3,17 @@
 package ent
 
 import (
-	"_examples/graphql/ent/todohistory"
 	"fmt"
 	"strings"
 	"time"
+
+	"_examples/graphql/ent/todohistory"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // TodoHistory is the model entity for the TodoHistory schema.

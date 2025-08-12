@@ -3,13 +3,14 @@
 package friendshiphistory
 
 import (
-	"_examples/testdata/debug/internal/ent/predicate"
 	"time"
+
+	"_examples/testdata/debug/internal/ent/predicate"
 
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // ID filters vertices based on their ID field.

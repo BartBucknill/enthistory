@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/without_updatedby/ent/residencehistory"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/without_updatedby/ent/residencehistory"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // ResidenceHistoryCreate is the builder for creating a ResidenceHistory entity.

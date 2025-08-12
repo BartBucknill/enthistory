@@ -15,7 +15,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type Change struct {
@@ -38,9 +38,7 @@ type HistoryDiff[T any] struct {
 	Changes []Change
 }
 
-var (
-	MismatchedRefError = errors.New("cannot take diff of histories with different Refs")
-)
+var MismatchedRefError = errors.New("cannot take diff of histories with different Refs")
 
 func (_m *MenuItemHistory) changes(new *MenuItemHistory) []Change {
 	var changes []Change
@@ -157,7 +155,7 @@ type menuitemhistoryref struct {
 }
 
 func auditMenuItemHistory(ctx context.Context, config config) ([][]string, error) {
-	var records = [][]string{}
+	records := [][]string{}
 	var refs []menuitemhistoryref
 	client := NewMenuItemHistoryClient(config)
 	err := client.Query().
@@ -165,7 +163,6 @@ func auditMenuItemHistory(ctx context.Context, config config) ([][]string, error
 		Order(menuitemhistory.ByHistoryTime()).
 		Select(menuitemhistory.FieldRef).
 		Scan(ctx, &refs)
-
 	if err != nil {
 		return nil, err
 	}

@@ -3,23 +3,24 @@
 package ent
 
 import (
-	"_examples/testdata/debug/internal/ent/character"
-	"_examples/testdata/debug/internal/ent/characterhistory"
-	"_examples/testdata/debug/internal/ent/friendship"
-	"_examples/testdata/debug/internal/ent/friendshiphistory"
-	"_examples/testdata/debug/internal/ent/predicate"
-	"_examples/testdata/debug/models"
 	"context"
 	"errors"
 	"fmt"
 	"sync"
 	"time"
 
+	"_examples/testdata/debug/internal/ent/character"
+	"_examples/testdata/debug/internal/ent/characterhistory"
+	"_examples/testdata/debug/internal/ent/friendship"
+	"_examples/testdata/debug/internal/ent/friendshiphistory"
+	"_examples/testdata/debug/internal/ent/predicate"
+	"_examples/testdata/debug/models"
+
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

@@ -3,6 +3,12 @@
 package ent
 
 import (
+	"context"
+	"errors"
+	"fmt"
+	"sync"
+	"time"
+
 	"_examples/basic/ent/character"
 	"_examples/basic/ent/characterhistory"
 	"_examples/basic/ent/friendship"
@@ -11,17 +17,12 @@ import (
 	"_examples/basic/ent/residence"
 	"_examples/basic/ent/residencehistory"
 	"_examples/basic/ent/schema/models"
-	"context"
-	"errors"
-	"fmt"
-	"sync"
-	"time"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

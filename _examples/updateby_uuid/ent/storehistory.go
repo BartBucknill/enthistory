@@ -3,16 +3,17 @@
 package ent
 
 import (
-	"_examples/updateby_uuid/ent/storehistory"
 	"fmt"
 	"strings"
 	"time"
+
+	"_examples/updateby_uuid/ent/storehistory"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // StoreHistory is the model entity for the StoreHistory schema.

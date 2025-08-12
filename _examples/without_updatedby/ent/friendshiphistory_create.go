@@ -3,16 +3,17 @@
 package ent
 
 import (
-	"_examples/without_updatedby/ent/friendshiphistory"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/without_updatedby/ent/friendshiphistory"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // FriendshipHistoryCreate is the builder for creating a FriendshipHistory entity.

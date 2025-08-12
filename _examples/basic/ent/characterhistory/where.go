@@ -3,13 +3,14 @@
 package characterhistory
 
 import (
+	"time"
+
 	"_examples/basic/ent/predicate"
 	"_examples/basic/ent/schema/models"
-	"time"
 
 	"entgo.io/ent/dialect/sql"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // ID filters vertices based on their ID field.

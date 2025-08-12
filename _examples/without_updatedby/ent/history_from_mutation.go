@@ -13,12 +13,10 @@ import (
 
 	"entgo.io/ent"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
-var (
-	idNotFoundError = errors.New("could not get id from mutation")
-)
+var idNotFoundError = errors.New("could not get id from mutation")
 
 func EntOpToHistoryOp(op ent.Op) enthistory.OpType {
 	switch op {

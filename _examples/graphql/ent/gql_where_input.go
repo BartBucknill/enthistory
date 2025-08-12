@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/graphql/ent/predicate"
-	"_examples/graphql/ent/testexclude"
-	"_examples/graphql/ent/todo"
-	"_examples/graphql/ent/todohistory"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/graphql/ent/predicate"
+	"_examples/graphql/ent/testexclude"
+	"_examples/graphql/ent/todo"
+	"_examples/graphql/ent/todohistory"
+
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // TestExcludeWhereInput represents a where input for filtering TestExclude queries.

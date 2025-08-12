@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent/dialect/sql"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

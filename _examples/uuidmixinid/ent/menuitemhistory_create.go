@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/uuidmixinid/ent/menuitemhistory"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/uuidmixinid/ent/menuitemhistory"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // MenuItemHistoryCreate is the builder for creating a MenuItemHistory entity.

@@ -3,9 +3,10 @@
 package schema
 
 import (
+	"time"
+
 	"_examples/basic/ent/schema/mixins"
 	"_examples/basic/ent/schema/models"
-	"time"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/entsql"
@@ -13,7 +14,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type CharacterHistory struct {
@@ -62,18 +63,22 @@ func (CharacterHistory) Fields() []ent.Field {
 			GoType(models.SpeciesType("")).
 			Optional().
 			Immutable().
-			DefaultFunc(models.DefaultSpeciesType)}
-
+			DefaultFunc(models.DefaultSpeciesType),
+	}
 }
+
 func (CharacterHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (CharacterHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entsql.Annotation{Table: "character_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert, enthistory.OpTypeUpdate, enthistory.OpTypeDelete}}}
 }
+
 func (CharacterHistory) Mixin() []ent.Mixin {
 	return []ent.Mixin{mixins.TimeMixin{}}
 }
+
 func (CharacterHistory) Indexes() []ent.Index {
 	return []ent.Index{index.Fields("history_time")}
 }

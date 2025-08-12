@@ -3,8 +3,9 @@
 package schema
 
 import (
-	"_examples/uuidmixinid/ent/schema/mixins"
 	"time"
+
+	"_examples/uuidmixinid/ent/schema/mixins"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/entsql"
@@ -13,7 +14,7 @@ import (
 	"entgo.io/ent/schema/index"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type MenuItemHistory struct {
@@ -43,17 +44,22 @@ func (MenuItemHistory) Fields() []ent.Field {
 			Immutable(),
 		field.String("description").
 			Optional().
-			Immutable()}
+			Immutable(),
+	}
 }
+
 func (MenuItemHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (MenuItemHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entsql.Annotation{Table: "menu_item_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert}}}
 }
+
 func (MenuItemHistory) Mixin() []ent.Mixin {
 	return []ent.Mixin{mixins.IDMixin{}, mixins.TimeMixin{}}
 }
+
 func (MenuItemHistory) Indexes() []ent.Index {
 	return []ent.Index{index.Fields("history_time")}
 }

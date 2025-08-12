@@ -12,7 +12,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type TodoHistory struct {
@@ -43,11 +43,14 @@ func (TodoHistory) Fields() []ent.Field {
 			Optional().
 			Annotations(entgql.Annotation{Type: "ID"}),
 		field.String("name").
-			Annotations(entgql.Annotation{OrderField: "NAME"})}
+			Annotations(entgql.Annotation{OrderField: "NAME"}),
+	}
 }
+
 func (TodoHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (TodoHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entgql.Annotation{RelayConnection: true, QueryField: &entgql.FieldConfig{}}, entsql.Annotation{Table: "todo_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert, enthistory.OpTypeUpdate, enthistory.OpTypeDelete}}}
 }

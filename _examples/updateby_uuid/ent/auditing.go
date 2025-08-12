@@ -16,7 +16,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type Change struct {
@@ -39,9 +39,7 @@ type HistoryDiff[T any] struct {
 	Changes []Change
 }
 
-var (
-	MismatchedRefError = errors.New("cannot take diff of histories with different Refs")
-)
+var MismatchedRefError = errors.New("cannot take diff of histories with different Refs")
 
 func (_m *OrganizationHistory) changes(new *OrganizationHistory) []Change {
 	var changes []Change
@@ -199,7 +197,7 @@ type organizationhistoryref struct {
 }
 
 func auditOrganizationHistory(ctx context.Context, config config) ([][]string, error) {
-	var records = [][]string{}
+	records := [][]string{}
 	var refs []organizationhistoryref
 	client := NewOrganizationHistoryClient(config)
 	err := client.Query().
@@ -207,7 +205,6 @@ func auditOrganizationHistory(ctx context.Context, config config) ([][]string, e
 		Order(organizationhistory.ByHistoryTime()).
 		Select(organizationhistory.FieldRef).
 		Scan(ctx, &refs)
-
 	if err != nil {
 		return nil, err
 	}
@@ -252,7 +249,7 @@ type storehistoryref struct {
 }
 
 func auditStoreHistory(ctx context.Context, config config) ([][]string, error) {
-	var records = [][]string{}
+	records := [][]string{}
 	var refs []storehistoryref
 	client := NewStoreHistoryClient(config)
 	err := client.Query().
@@ -260,7 +257,6 @@ func auditStoreHistory(ctx context.Context, config config) ([][]string, error) {
 		Order(storehistory.ByHistoryTime()).
 		Select(storehistory.FieldRef).
 		Scan(ctx, &refs)
-
 	if err != nil {
 		return nil, err
 	}

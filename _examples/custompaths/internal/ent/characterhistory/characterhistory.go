@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent/dialect/sql"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (
@@ -50,10 +50,8 @@ func ValidColumn(column string) bool {
 	return false
 }
 
-var (
-	// DefaultHistoryTime holds the default value on creation for the "history_time" field.
-	DefaultHistoryTime func() time.Time
-)
+// DefaultHistoryTime holds the default value on creation for the "history_time" field.
+var DefaultHistoryTime func() time.Time
 
 // OperationValidator is a validator for the "operation" field enum values. It is called by the builders before save.
 func OperationValidator(o enthistory.OpType) error {

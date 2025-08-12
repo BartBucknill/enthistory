@@ -11,7 +11,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type FriendshipHistory struct {
@@ -32,11 +32,14 @@ func (FriendshipHistory) Fields() []ent.Field {
 			Optional().
 			Immutable(),
 		field.UUID("character_id", uuid.UUID{}),
-		field.UUID("friend_id", uuid.UUID{})}
+		field.UUID("friend_id", uuid.UUID{}),
+	}
 }
+
 func (FriendshipHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (FriendshipHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entsql.Annotation{Table: "friendship_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert, enthistory.OpTypeUpdate, enthistory.OpTypeDelete}}}
 }

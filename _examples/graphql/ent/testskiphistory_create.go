@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/graphql/ent/testskiphistory"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/graphql/ent/testskiphistory"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // TestSkipHistoryCreate is the builder for creating a TestSkipHistory entity.

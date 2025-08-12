@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/updateby_uuid/ent/storehistory"
 	"context"
 	"errors"
 	"fmt"
 	"time"
 
+	"_examples/updateby_uuid/ent/storehistory"
+
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // StoreHistoryCreate is the builder for creating a StoreHistory entity.

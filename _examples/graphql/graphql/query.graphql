@@ -294,7 +294,7 @@ type TodoHistoryEdge {
 """
 TodoHistoryOpType is enum for the field operation
 """
-enum TodoHistoryOpType @goModel(model: "github.com/flume/enthistory.OpType") {
+enum TodoHistoryOpType @goModel(model: "github.com/BartBucknill/enthistory.OpType") {
   INSERT
   UPDATE
   DELETE

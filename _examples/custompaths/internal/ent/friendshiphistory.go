@@ -3,16 +3,17 @@
 package ent
 
 import (
-	"_examples/custompaths/internal/ent/friendshiphistory"
 	"fmt"
 	"strings"
 	"time"
+
+	"_examples/custompaths/internal/ent/friendshiphistory"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // FriendshipHistory is the model entity for the FriendshipHistory schema.

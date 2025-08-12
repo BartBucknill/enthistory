@@ -3,16 +3,17 @@
 package ent
 
 import (
-	"_examples/graphql/ent/testskiphistory"
 	"fmt"
 	"strings"
 	"time"
+
+	"_examples/graphql/ent/testskiphistory"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // TestSkipHistory is the model entity for the TestSkipHistory schema.

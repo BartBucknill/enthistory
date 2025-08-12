@@ -3,17 +3,18 @@
 package ent
 
 import (
-	"_examples/updateby_uuid/ent/organizationhistory"
 	"encoding/json"
 	"fmt"
 	"strings"
 	"time"
 
+	"_examples/updateby_uuid/ent/organizationhistory"
+
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 // OrganizationHistory is the model entity for the OrganizationHistory schema.

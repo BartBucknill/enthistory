@@ -3,13 +3,14 @@
 package characterhistory
 
 import (
-	"_examples/basic/ent/schema/models"
 	"fmt"
 	"time"
 
+	"_examples/basic/ent/schema/models"
+
 	"entgo.io/ent/dialect/sql"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

@@ -3,22 +3,23 @@
 package ent
 
 import (
-	"_examples/updateby_uuid/ent/organization"
-	"_examples/updateby_uuid/ent/organizationhistory"
-	"_examples/updateby_uuid/ent/predicate"
-	"_examples/updateby_uuid/ent/store"
-	"_examples/updateby_uuid/ent/storehistory"
 	"context"
 	"errors"
 	"fmt"
 	"sync"
 	"time"
 
+	"_examples/updateby_uuid/ent/organization"
+	"_examples/updateby_uuid/ent/organizationhistory"
+	"_examples/updateby_uuid/ent/predicate"
+	"_examples/updateby_uuid/ent/store"
+	"_examples/updateby_uuid/ent/storehistory"
+
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 const (

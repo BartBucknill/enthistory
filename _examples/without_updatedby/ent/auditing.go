@@ -17,7 +17,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type Change struct {
@@ -40,9 +40,7 @@ type HistoryDiff[T any] struct {
 	Changes []Change
 }
 
-var (
-	MismatchedRefError = errors.New("cannot take diff of histories with different Refs")
-)
+var MismatchedRefError = errors.New("cannot take diff of histories with different Refs")
 
 func (_m *CharacterHistory) changes(new *CharacterHistory) []Change {
 	var changes []Change
@@ -237,7 +235,7 @@ type characterhistoryref struct {
 }
 
 func auditCharacterHistory(ctx context.Context, config config) ([][]string, error) {
-	var records = [][]string{}
+	records := [][]string{}
 	var refs []characterhistoryref
 	client := NewCharacterHistoryClient(config)
 	err := client.Query().
@@ -245,7 +243,6 @@ func auditCharacterHistory(ctx context.Context, config config) ([][]string, erro
 		Order(characterhistory.ByHistoryTime()).
 		Select(characterhistory.FieldRef).
 		Scan(ctx, &refs)
-
 	if err != nil {
 		return nil, err
 	}
@@ -289,7 +286,7 @@ type friendshiphistoryref struct {
 }
 
 func auditFriendshipHistory(ctx context.Context, config config) ([][]string, error) {
-	var records = [][]string{}
+	records := [][]string{}
 	var refs []friendshiphistoryref
 	client := NewFriendshipHistoryClient(config)
 	err := client.Query().
@@ -297,7 +294,6 @@ func auditFriendshipHistory(ctx context.Context, config config) ([][]string, err
 		Order(friendshiphistory.ByHistoryTime()).
 		Select(friendshiphistory.FieldRef).
 		Scan(ctx, &refs)
-
 	if err != nil {
 		return nil, err
 	}
@@ -341,7 +337,7 @@ type residencehistoryref struct {
 }
 
 func auditResidenceHistory(ctx context.Context, config config) ([][]string, error) {
-	var records = [][]string{}
+	records := [][]string{}
 	var refs []residencehistoryref
 	client := NewResidenceHistoryClient(config)
 	err := client.Query().
@@ -349,7 +345,6 @@ func auditResidenceHistory(ctx context.Context, config config) ([][]string, erro
 		Order(residencehistory.ByHistoryTime()).
 		Select(residencehistory.FieldRef).
 		Scan(ctx, &refs)
-
 	if err != nil {
 		return nil, err
 	}

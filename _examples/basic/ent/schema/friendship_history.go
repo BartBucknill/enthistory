@@ -3,8 +3,9 @@
 package schema
 
 import (
-	"_examples/basic/ent/schema/mixins"
 	"time"
+
+	"_examples/basic/ent/schema/mixins"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/entsql"
@@ -12,7 +13,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
 
-	"github.com/flume/enthistory"
+	"github.com/BartBucknill/enthistory"
 )
 
 type FriendshipHistory struct {
@@ -39,17 +40,22 @@ func (FriendshipHistory) Fields() []ent.Field {
 		field.Int("character_id").
 			Immutable(),
 		field.Int("friend_id").
-			Immutable()}
+			Immutable(),
+	}
 }
+
 func (FriendshipHistory) Edges() []ent.Edge {
 	return nil
 }
+
 func (FriendshipHistory) Annotations() []schema.Annotation {
 	return []schema.Annotation{entsql.Annotation{Table: "friendship_history"}, enthistory.Annotations{IsHistory: true, Triggers: []enthistory.OpType{enthistory.OpTypeInsert, enthistory.OpTypeUpdate, enthistory.OpTypeDelete}}}
 }
+
 func (FriendshipHistory) Mixin() []ent.Mixin {
 	return []ent.Mixin{mixins.TimeMixin{}}
 }
+
 func (FriendshipHistory) Indexes() []ent.Index {
 	return []ent.Index{index.Fields("history_time")}
 }
