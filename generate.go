@@ -20,7 +20,7 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/field"
 
-	"github.com/flume/enthistory/internal/schemast"
+	"github.com/BartBucknill/enthistory/internal/schemast"
 
 	"entgo.io/contrib/entgql"
 
@@ -367,7 +367,7 @@ type mergeable interface {
 }
 
 func mergeAnnotations[T mergeable](from ...T) schema.Annotation {
-	var t = *new(T)
+	t := *new(T)
 	if _, ok := any(t).(schema.Merger); !ok {
 		return t
 	}
@@ -375,7 +375,7 @@ func mergeAnnotations[T mergeable](from ...T) schema.Annotation {
 		return t
 	}
 	for _, f := range from {
-		var e = t.Merge(f)
+		e := t.Merge(f)
 		t = e.(T)
 	}
 	return t
@@ -384,7 +384,7 @@ func mergeAnnotations[T mergeable](from ...T) schema.Annotation {
 func historyFields(schema ent.Interface, opts HistoryOptions) ([]ent.Field, error) {
 	var fields []ent.Field
 	var idField ent.Field = field.Int("id").Immutable()
-	var ref = idField
+	ref := idField
 
 	var managedId bool
 	entgqlEnabled := false
